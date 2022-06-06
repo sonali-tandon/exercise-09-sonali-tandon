@@ -46,5 +46,7 @@ $("#images img").on("click", function () {
 $(".modal").on("show.bs.modal", function (event) {
     let imageClicked = $(event.relatedTarget);
     let imageSource = imageClicked.attr("src");
+    let imageAlt = imageClicked.attr("alt");
     $("#modalImage").attr("src", imageSource);
+    $("#modalImage").attr("alt", imageAlt);
 });
