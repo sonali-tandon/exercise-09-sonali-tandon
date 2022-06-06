@@ -17,3 +17,21 @@ let getVowelCount = (aString) => {
 
 let numVowelsInName = getVowelCount(myName);
 console.log(numVowelsInName);
+
+h1Element = $("h1");
+h1Element.text("Interactive Pet Viewer");
+
+footerElement = $("footer");
+footerElement.html("<small>All images from <a href=\"https://unsplash.com/\">unsplash.com</a></small>");
+
+document.getElementById("cats").style.display = "none";
+document.getElementById("btnShowDogs").classList.add("active");
+
+$("button").on("click", function () {
+    $("#cats").toggle("fast");
+    $("#dogs").toggle("fast");
+    $("#btnShowDogs").toggleClass("active");
+    $("#btnShowCats").toggleClass("active");
+});
+
+$("img").css("cursor", "pointer");
