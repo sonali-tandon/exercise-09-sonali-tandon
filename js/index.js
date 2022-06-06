@@ -34,4 +34,17 @@ $("button").on("click", function () {
     $("#btnShowCats").toggleClass("active");
 });
 
-$("img").css("cursor", "pointer");
+$("#images img").css("cursor", "pointer");
+
+$("#images img").attr("data-bs-toggle", "modal");
+$("#images img").attr("data-bs-target", "#modalelement");
+
+$("#images img").on("click", function () {
+    $(".modal").modal("show");
+});
+
+$(".modal").on("show.bs.modal", function (event) {
+    let imageClicked = $(event.relatedTarget);
+    let imageSource = imageClicked.attr("src");
+    $("#modalImage").attr("src", imageSource);
+});
